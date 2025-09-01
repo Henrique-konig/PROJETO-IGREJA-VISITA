@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Patrimônio Histórico – Rotas Italianas | Nereu Ramos</title>
+  <meta name="description" content="A história da imigração italiana no bairro Nereu Ramos (Jaraguá do Sul) e o legado da Paróquia Nossa Senhora do Rosário. Agenda 2025, galeria, projeto interdisciplinar e como participar." />
+  <meta name="theme-color" content="#18453B" />
+  <meta property="og:title" content="Patrimônio Histórico – Rotas Italianas" />
+  <meta property="og:description" content="Descubra a rica história da comunidade italiana em Nereu Ramos e a Paróquia Nossa Senhora do Rosário." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1f1b; /* fundo escuro verde-azulado */
+      --card:#112823;
+      --muted:#7ec7b1;
+      --brand:#e0b500; /* dourado */
+      --brand-2:#b22222; /* vermelho vinho */
+      --text:#f3f7f5;
+      --text-dim:#cfe3dc;
+      --border:#244b41;
+      --shadow: 0 10px 30px rgba(0,0,0,.28);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0; padding:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:var(--text); background:radial-gradient(1200px 600px at 80% -10%, #15352e 0%, var(--bg) 60%);}    
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; display:block}
+    .container{width:min(1100px, 92%); margin-inline:auto}
+    .btn{display:inline-flex; align-items:center; gap:.6rem; border:1px solid var(--border); padding:.9rem 1.1rem; border-radius:999px; font-weight:600; transition:.25s ease; background:linear-gradient(180deg, #1b3d35, #132e29); box-shadow:var(--shadow)}
+    .btn:hover{transform:translateY(-2px); border-color:var(--muted)}
+    .btn.brand{background:linear-gradient(180deg, var(--brand), #caa200); color:#1b1700; border-color:#e5c54d}
+    .btn.ghost{background:transparent}
+    .chip{display:inline-block; padding:.35rem .7rem; border-radius:999px; font-size:.8rem; background:#183830; border:1px solid var(--border); color:var(--text-dim)}
+
+    /* NAV */
+    header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(8px); background:linear-gradient(180deg, rgba(15,31,27,.85), rgba(15,31,27,.65)); border-bottom:1px solid rgba(255,255,255,.05)}
+    nav{display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.9rem 0}
+    .brand{display:flex; align-items:center; gap:.7rem; font-weight:800; letter-spacing:.2px}
+    .brand .dot{width:12px; height:12px; border-radius:50%; background:radial-gradient(circle at 30% 30%, #ffe782, var(--brand)); box-shadow:0 0 0 3px rgba(224,181,0,.15)}
+    .navlinks{display:flex; flex-wrap:wrap; gap:.6rem}
+    .navlinks a{padding:.55rem .9rem; border-radius:999px; border:1px solid transparent}
+    .navlinks a:hover{border-color:var(--border); background:#15352e}
+
+    /* HERO */
+    .hero{padding:6rem 0 3.5rem; position:relative}
+    .hero-grid{display:grid; grid-template-columns: 1.1fr .9fr; gap:2rem}
+    .hero h1{font-size:clamp(2rem, 4.5vw, 3.2rem); line-height:1.08; margin:.2rem 0 1rem; text-wrap:balance}
+    .hero p{color:var(--text-dim); font-size:1.05rem}
+    .hero-card{background:linear-gradient(180deg, #123028, #0e2621); border:1px solid var(--border); border-radius:var(--radius); padding:1.1rem; box-shadow:var(--shadow)}
+    .stat{display:grid; grid-template-columns:auto 1fr; gap:.4rem 1rem; align-items:center}
+    .stat strong{font-size:1.3rem}
+
+    /* SECTIONS */
+    section{padding:3.5rem 0}
+    h2{font-size:clamp(1.5rem, 3.5vw, 2.2rem); margin:0 0 1rem}
+    .lead{color:var(--text-dim); margin:0 0 1.4rem}
+    .grid{display:grid; gap:1.2rem}
+    .grid-2{grid-template-columns: repeat(2,1fr)}
+    .grid-3{grid-template-columns: repeat(3,1fr)}
+    .card{background:linear-gradient(180deg, #102721, #0d231f); border:1px solid var(--border); border-radius:var(--radius); padding:1.2rem; box-shadow:var(--shadow)}
+    .card h3{margin:.2rem 0 .4rem; font-size:1.15rem}
+
+    /* TIMELINE */
+    .timeline{border-left:2px dashed var(--border); padding-left:1rem; display:grid; gap:1rem}
+    .timeline .item{position:relative}
+    .timeline .item::before{content:""; position:absolute; left:-1.25rem; top:.35rem; width:.75rem; height:.75rem; border-radius:50%; background:var(--brand); box-shadow:0 0 0 4px rgba(224,181,0,.15)}
+
+    /* GALLERY & UPLOAD */
+    .gallery{display:grid; grid-template-columns: repeat(2, 1fr); gap:1rem}
+    .drop{border:2px dashed var(--border); background:#0e2420; border-radius:var(--radius); min-height:220px; display:grid; place-items:center; text-align:center; padding:1rem; cursor:pointer}
+    .drop:hover{border-color:var(--muted)}
+    .drop input{display:none}
+    .drop .hint{color:var(--text-dim); font-size:.95rem}
+    .preview{border-radius:var(--radius); overflow:hidden; border:1px solid var(--border)}
+
+    /* LISTAS BONITAS */
+    .checklist{display:grid; gap:.6rem}
+    .checklist li{list-style:none; display:flex; gap:.6rem; align-items:flex-start}
+    .checklist li::before{content:"✔"; font-weight:800; color:var(--brand)}
+
+    /* FOOTER */
+    footer{border-top:1px solid var(--border); padding:2.5rem 0 4rem; color:var(--text-dim)}
+
+    /* RESPONSIVO */
+    @media (max-width: 900px){
+      .hero-grid{grid-template-columns: 1fr}
+      .grid-2{grid-template-columns: 1fr}
+      .grid-3{grid-template-columns: 1fr}
+      .gallery{grid-template-columns: 1fr}
+    }
+
+    /* IMPRESSÃO */
+    @media print{
+      header, .actions, .drop .hint, .navlinks{display:none !important}
+      body{background:white; color:black}
+      .card{box-shadow:none}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand" aria-label="Patrimônio Histórico – Rotas Italianas">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Rotas Italianas • Nereu Ramos</span>
+        </div>
+        <div class="navlinks" role="navigation" aria-label="Navegação principal">
+          <a href="#historia">História</a>
+          <a href="#paroquia">Paróquia</a>
+          <a href="#liderancas">Lideranças</a>
+          <a href="#programacao">Programação 2025</a>
+          <a href="#projeto">Projeto Interdisciplinar</a>
+          <a href="#galeria">Galeria</a>
+          <a href="#contato">Contato</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO ------------------------------------------------------------------>
+    <section class="hero" id="topo">
+      <div class="container hero-grid">
+        <div>
+          <span class="chip">Patrimônio Histórico • Rotas Italianas</span>
+          <h1>A Imigração Italiana no Bairro Nereu Ramos</h1>
+          <p class="lead">Descubra a rica história da comunidade italiana que moldou Jaraguá do Sul, preservando tradições, fé e cultura através das gerações.</p>
+          <div class="actions" style="display:flex; gap:.7rem; margin-top:1.1rem">
+            <a href="#historia" class="btn brand">Explorar História</a>
+            <a href="#contato" class="btn ghost">Participe da Comunidade</a>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Resumo">
+          <div class="grid grid-2">
+            <div class="stat">
+              <strong>1890–1920</strong>
+              <span class="text">Chegada das famílias (Trentino)</span>
+            </div>
+            <div class="stat">
+              <strong>200+</strong>
+              <span class="text">Fotografias históricas no acervo</span>
+            </div>
+            <div class="stat">
+              <strong>1</strong>
+              <span class="text">Paróquia como coração comunitário</span>
+            </div>
+            <div class="stat">
+              <strong>2025</strong>
+              <span class="text">Programação ativa e inovadora</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- HISTÓRIA --------------------------------------------------------------->
+    <section id="historia">
+      <div class="container">
+        <h2>Imigração e Identidade</h2>
+        <p class="lead">No final do século XIX e início do XX, famílias oriundas principalmente da região do Trentino chegaram ao bairro Nereu Ramos, em Jaraguá do Sul, em busca de novas oportunidades e uma vida melhor.</p>
+        <div class="grid grid-2">
+          <div class="card">
+            <h3>Desafios e Resiliência</h3>
+            <p>Idioma desconhecido, clima tropical, adaptação a novos costumes e a necessidade de reconstruir a vida em terra estrangeira. Ainda assim, trouxeram uma <strong>riqueza cultural inestimável</strong>.</p>
+            <ul class="checklist" aria-label="Legados">
+              <li>Preservação da língua e tradições familiares</li>
+              <li>Profunda religiosidade católica</li>
+              <li>Fortes vínculos comunitários</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Linha do Tempo</h3>
+            <div class="timeline" aria-label="Linha do tempo">
+              <div class="item">
+                <strong>1890–1920</strong>
+                <p>Chegada das famílias italianas e estabelecimento em Nereu Ramos.</p>
+              </div>
+              <div class="item">
+                <strong>Início séc. XX</strong>
+                <p>Organização comunitária e fortalecimento da identidade cultural.</p>
+              </div>
+              <div class="item">
+                <strong>Paróquia</strong>
+                <p>Nascimento da Paróquia Nossa Senhora do Rosário como centro social e espiritual.</p>
+              </div>
+              <div class="item">
+                <strong>Hoje</strong>
+                <p>Patrimônio vivo celebrado e preservado pela comunidade.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="lead" style="margin-top:1rem">Essa herança permanece viva, celebrada ao redor da <strong>Paróquia Nossa Senhora do Rosário</strong>.</p>
+      </div>
+    </section>
+
+    <!-- PARÓQUIA --------------------------------------------------------------->
+    <section id="paroquia">
+      <div class="container">
+        <h2>A Construção da Paróquia Nossa Senhora do Rosário</h2>
+        <p class="lead">Centro espiritual e social, erguido com fé, determinação e trabalho coletivo. A arquitetura funde referências italianas a materiais e técnicas locais.</p>
+        <div class="grid grid-4 grid-2">
+          <div class="card"><h3>Centro de Fé</h3><p>Ponto de encontro espiritual que fortaleceu a identidade católica.</p></div>
+          <div class="card"><h3>União Social</h3><p>Espaço de convivência que manteve vivas as tradições e costumes italianos.</p></div>
+          <div class="card"><h3>Esforço Coletivo</h3><p>Construída por voluntariado e doações da comunidade.</p></div>
+          <div class="card"><h3>Arquitetura Única</h3><p>Harmonia entre tradição italiana e realidade brasileira.</p></div>
+        </div>
+
+        <div class="card" style="margin-top:1rem">
+          <h3>Um Legado de Fé e Comunidade</h3>
+          <p>A paróquia nasceu do sonho coletivo de manter vivas as tradições religiosas. Sob a liderança do <strong>Padre Antônio Echelmeyer</strong>, o “Padre Construtor”, cada etapa da obra simbolizou a determinação em preservar a identidade cultural.</p>
+          <p>Mais que um templo, tornou-se o coração pulsante da vida social, com festas, celebrações e ações de solidariedade que uniram gerações.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIDERANÇAS ------------------------------------------------------------->
+    <section id="liderancas">
+      <div class="container">
+        <h2>Lideranças Religiosas</h2>
+        <p class="lead">Padres visionários que dedicaram suas vidas ao crescimento espiritual e social da comunidade italiana.</p>
+        <div class="grid grid-2">
+          <div class="card">
+            <h3>Padre Antônio Echelmeyer • <span class="chip">Padre Construtor</span></h3>
+            <p>Líder visionário e organizador social que materializou o sonho da paróquia.</p>
+            <ul class="checklist">
+              <li>Construção da Igreja</li>
+              <li>Organização Social</li>
+              <li>Educação</li>
+              <li>Liderança</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Padre Aloísio</h3>
+            <p>Sucessor dedicado que manteve e expandiu o legado do Padre Antônio.</p>
+            <ul class="checklist">
+              <li>Continuidade do Legado</li>
+              <li>Ações Sociais e apoio às famílias</li>
+              <li>Preservação Cultural e festivais</li>
+              <li>Impacto duradouro na identidade comunitária</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRAMAÇÃO 2025 ------------------------------------------------------->
+    <section id="programacao">
+      <div class="container">
+        <h2>Atividades e Serviços da Paróquia em 2025</h2>
+        <p class="lead">A tradição encontra a modernidade em uma programação diversificada que mantém viva a herança italiana.</p>
+        <div class="grid grid-3">
+          <div class="card"><h3>Semanal</h3><p><strong>Celebrações Religiosas</strong><br>Missas especiais, novenas e festividades do calendário católico italiano.</p></div>
+          <div class="card"><h3>Mensal</h3><p><strong>Festas Culturais Italianas</strong><br>Festa da Polenta, celebrações tradicionais e eventos gastronômicos.</p></div>
+          <div class="card"><h3>Contínuo</h3><p><strong>Ações Sociais</strong><br>Distribuição de alimentos, apoio às famílias e caridade.</p></div>
+          <div class="card"><h3>Agendado</h3><p><strong>Visitas Educativas</strong><br>Recepção de estudantes e grupos interessados na história local.</p></div>
+          <div class="card"><h3>Permanente</h3><p><strong>Preservação do Patrimônio</strong><br>Digitalização de documentos, fotografias e registros históricos.</p></div>
+          <div class="card"><h3>Inovação</h3><p><strong>Tecnologia Educativa</strong><br>QR codes, apps e recursos digitais para engajar visitantes.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJETO INTERDISCIPLINAR ---------------------------------------------->
+    <section id="projeto">
+      <div class="container">
+        <h2>Projeto Interdisciplinar – Patrimônio Histórico: Rotas Italianas</h2>
+        <p class="lead">Uma iniciativa educativa que integra áreas do conhecimento para formar jovens engajados na preservação do patrimônio cultural.</p>
+
+        <div class="grid grid-2">
+          <div class="card">
+            <h3>Objetivos</h3>
+            <ul class="checklist">
+              <li>Valorização histórica de Jaraguá do Sul</li>
+              <li>Protagonismo estudantil</li>
+              <li>Integração curricular</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Metodologia Ativa</h3>
+            <ul class="checklist">
+              <li>Pesquisa Participativa (entrevistas e depoimentos)</li>
+              <li>Produção Multimídia (documentários, podcasts, exposições)</li>
+              <li>Ação Comunitária (roteiros turísticos e preservação)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="grid grid-3" style="margin-top:1rem">
+          <div class="card">
+            <h3>Ciências Humanas</h3>
+            <p>História, Geografia, Sociologia e Filosofia da imigração italiana.</p>
+          </div>
+          <div class="card">
+            <h3>Linguagens</h3>
+            <p>Português, Literatura, Artes e Língua Italiana.</p>
+          </div>
+          <div class="card">
+            <h3>Áreas Técnicas</h3>
+            <p>Informática, Design, Fotografia e Multimídia.</p>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:1rem">
+          <h3>Resultados Esperados</h3>
+          <ul class="checklist">
+            <li>Maior engajamento com a história local</li>
+            <li>Fortalecimento da identidade cultural</li>
+            <li>Criação de acervo digital</li>
+            <li>Roteiros educativos e turísticos</li>
+            <li>Formação de multiplicadores da cultura italiana</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERIA E UPLOAD ------------------------------------------------------->
+    <section id="galeria">
+      <div class="container">
+        <h2>Galeria Visual</h2>
+        <p class="lead">Insira <strong>duas imagens da igreja</strong> para personalizar o site. As imagens ficam apenas no seu navegador (sem enviar para servidor).</p>
+
+        <div class="gallery" aria-label="Upload de imagens da igreja">
+          <label class="drop" for="img1Input" id="drop1">
+            <input type="file" id="img1Input" accept="image/*" />
+            <div class="hint">
+              <strong>Igreja – Imagem 1</strong><br>
+              Clique ou arraste a foto aqui
+            </div>
+          </label>
+          <label class="drop" for="img2Input" id="drop2">
+            <input type="file" id="img2Input" accept="image/*" />
+            <div class="hint">
+              <strong>Igreja – Imagem 2</strong><br>
+              Clique ou arraste a foto aqui
+            </div>
+          </label>
+        </div>
+
+        <div class="grid grid-2" style="margin-top:1rem">
+          <figure class="preview" aria-live="polite">
+            <img id="img1" src= "FrenteIgreja.png"alt="Pré-visualização da Igreja – Imagem 1" />
+            <figcaption class="card" style="border-top-left-radius:0; border-top-right-radius:0">Paróquia Nossa Senhora do Rosário</figcaption>
+          </figure>
+          <figure class="preview" aria-live="polite">
+            <img id="img2" src = "LateralIgreja.png"alt="Pré-visualização da Igreja – Imagem 2" />
+            <figcaption class="card" style="border-top-left-radius:0; border-top-right-radius:0">Paróquia Nossa Senhora do Rosário</figcaption>
+          </figure>
+        </div>
+
+        <div style="margin-top:1rem; display:flex; gap:.6rem; flex-wrap:wrap">
+          <button class="btn" id="downloadBtn" type="button">Baixar esta página com as imagens</button>
+          <button class="btn ghost" id="clearBtn" type="button">Remover imagens</button>
+        </div>
+
+        <div class="card" style="margin-top:1rem">
+          <h3>Acervo Histórico em Crescimento</h3>
+          <p>Fotografias, documentos e objetos históricos são digitalizados e catalogados, criando um valioso acervo digital da herança italiana em Jaraguá do Sul.</p>
+          <ul class="checklist">
+            <li>Fotografias Históricas – 200+ imagens</li>
+            <li>Documentos Originais – certidões, cartas e registros</li>
+            <li>Objetos Pessoais – utensílios, roupas e memórias</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="container">
+        <h2>Contato e Participação</h2>
+        <p class="lead">Junte-se a nós na preservação e divulgação da rica herança cultural italiana do bairro Nereu Ramos.</p>
+
+        <div class="grid grid-2">
+          <div class="card">
+            <h3>Informações</h3>
+            <p><strong>Endereço:</strong> Bairro Nereu Ramos, Jaraguá do Sul - SC<br><span class="chip">No coração da comunidade italiana</span></p>
+            <p><strong>Telefone:</strong> (47) 3372-XXXX <br><strong>E-mail:</strong> paroquia@rotasitalianas.org.br</p>
+            <p><strong>Horários:</strong> Seg a Sex: 8h–17h • Dom: 7h–12h</p>
+            <div style="display:flex; gap:.5rem; flex-wrap:wrap">
+              <span class="chip">Visitas Guiadas</span>
+              <span class="chip">Eventos Culturais</span>
+              <span class="chip">Ações Sociais</span>
+            </div>
+          </div>
+          <form class="card" id="formContato">
+            <h3>Envie sua Mensagem</h3>
+            <label>Nome Completo<br>
+              <input name="nome" required placeholder="Seu nome" style="width:100%" class="input" />
+            </label>
+            <label>E-mail<br>
+              <input type="email" name="email" required placeholder="seu@email.com" style="width:100%" class="input" />
+            </label>
+            <label>Assunto<br>
+              <input name="assunto" required placeholder="Como podemos ajudar?" style="width:100%" class="input" />
+            </label>
+            <label>Mensagem<br>
+              <textarea name="mensagem" rows="5" required placeholder="Conte-nos mais sobre seu interesse..." style="width:100%" class="input"></textarea>
+            </label>
+            <div style="margin-top:.6rem">
+              <button class="btn brand" type="submit">Enviar Mensagem</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="grid grid-3" style="margin-top:1rem">
+          <div class="card"><h3>Voluntariado</h3><p>Participe das ações sociais e eventos culturais da paróquia.</p></div>
+          <div class="card"><h3>Doações</h3><p>Contribua para a preservação do patrimônio e ações sociais.</p></div>
+          <div class="card"><h3>Pesquisa Histórica</h3><p>Compartilhe documentos, fotos e histórias familiares.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Preservar o Passado, Construir o Futuro — Faça parte desta história. © <span id="year"></span> Rotas Italianas • Nereu Ramos</p>
+    </div>
+  </footer>
+
+  <style>
+    .input{margin:.35rem 0 .8rem; padding:.8rem 1rem; border-radius:12px; background:#0b201c; border:1px solid var(--border); color:var(--text)}
+    .input:focus{outline:none; border-color:var(--muted); box-shadow:0 0 0 4px rgba(126,199,177,.15)}
+  </style>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id=a.getAttribute('href');
+        if(id.length>1){ e.preventDefault(); document.querySelector(id).scrollIntoView({behavior:'smooth'}) }
+      })
+    })
+
+    document.getElementById('year').textContent = new Date().getFullYear()
+
+    function setupDropzone(dropId, inputId, imgId){
+      const drop = document.getElementById(dropId)
+      const input = document.getElementById(inputId)
+      const img = document.getElementById(imgId)
+
+      function show(file){
+        if(!file || !file.type.startsWith('image/')) return
+        const reader=new FileReader()
+        reader.onload=e=>{ img.src=e.target.result }
+        reader.readAsDataURL(file)
+      }
+
+      input.addEventListener('change', e=> show(e.target.files[0]))
+
+      ;['dragenter','dragover'].forEach(evt=>{
+        drop.addEventListener(evt, e=>{ e.preventDefault(); drop.style.borderColor = getComputedStyle(document.documentElement).getPropertyValue('--muted') })
+      })
+      ;['dragleave','drop'].forEach(evt=>{
+        drop.addEventListener(evt, e=>{ e.preventDefault(); drop.style.borderColor = getComputedStyle(document.documentElement).getPropertyValue('--border') })
+      })
+      drop.addEventListener('drop', e=>{ const file = e.dataTransfer.files[0]; show(file) })
+    }
+    setupDropzone('drop1','img1Input','img1')
+    setupDropzone('drop2','img2Input','img2')
+
+    document.getElementById('clearBtn').addEventListener('click', ()=>{
+      document.getElementById('img1').removeAttribute('src')
+      document.getElementById('img2').removeAttribute('src')
+      document.getElementById('img1Input').value = ''
+      document.getElementById('img2Input').value = ''
+    })
+
+    document.getElementById('downloadBtn').addEventListener('click', ()=>{
+      const clone = document.documentElement.cloneNode(true)
+      
+      const html = '<!doctype html>\n' + clone.outerHTML
+      const blob = new Blob([html], {type:'text/html;charset=utf-8'})
+      const url = URL.createObjectURL(blob)
+      const a = Object.assign(document.createElement('a'), {href:url, download:'rotas-italianas-nereu-ramos.html'})
+      document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url)
+    })
+
+    document.getElementById('formContato').addEventListener('submit', (e)=>{
+      e.preventDefault()
+      const data = new FormData(e.target)
+      const nome = data.get('nome')
+      const email = data.get('email')
+      const assunto = data.get('assunto')
+      const mensagem = data.get('mensagem')
+      const mailto = `mailto:paroquia@rotasitalianas.org.br?subject=${encodeURIComponent('[Site] '+assunto)}&body=${encodeURIComponent('Nome: '+nome+'\nE-mail: '+email+'\n\n'+mensagem)}`
+      window.location.href = mailto
+    })
+  </script>
+</body>
+</html>
